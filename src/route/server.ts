@@ -10,7 +10,9 @@ import {
 const app = express();
 app.use(express.json());
 
-app.get("/users", getAllUser);
+app.get("/users", (req, res) => {
+  getAllUser(res);
+});
 
 app.get("/users/:nameSurname", findUser);
 
